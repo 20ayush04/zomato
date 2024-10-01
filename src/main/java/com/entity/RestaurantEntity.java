@@ -4,30 +4,32 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
 @Entity
-@Table(name = "customeraddress")
+@Table(name = "Restaurants")
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-
-public class CustomerAddressEntity {
-	
+public class RestaurantEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer addressId;
+	Integer restaurantId;
 	String title;
-	String addressLine;
+	String category;
+	String description;
+	String timings;
+	String address;
+	String contactNum;
+	Float latitude;
+	Float longitude;
 	Integer pincode;
-	Float lat;
-	Float log;
+	Integer online;
+	String email;
+	String password;
+	Integer active;
+	String restaurantImagePath;
 
-	@ManyToOne
-	@JoinColumn(name = "customerId")
-	CustomerEntity customer;
 }
